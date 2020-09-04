@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import TeamMembers from "./components/TeamMembers";
+import NewTeamMember from "./components/NewTeamMember";
+import TeamMemberForm from "./components/NewTeamMember";
 // import NoteForm from "./components/NoteForm";
 
 
@@ -21,12 +23,14 @@ function App() {
   const [teamMembers, setTeamMembers] = useState([
     {
       name: "Mark Rogowsky",
-      title: "President",
+      email: "mark-rogowsky@lambdastudents.com",
+      role: "Student",
       body:
-      "Mark joined the team at the start. He is in charge of the team."    },
+      "Mark joined the team at the start. He is one of the team."    },
       {
         name: "Chelsea Wetzel",
-        title: "Section Lead",
+        email: "chelsea-wetzel@lambdastudents.com",
+        role: "Section Lead",
         body:
         "Chelsea is a first time section lead at Lambda. She's a star."    }
   ]);
@@ -36,7 +40,8 @@ function App() {
     const newTeamMember = {
       // this is the newNote setup
       name: formData.name,
-      title: formData.title,
+      email: formData.email,
+      role: formData.role,
       body: formData.body
       };
       // now we have to add it
@@ -50,7 +55,7 @@ function App() {
   return (
     <div className="App">
       <h1>My Notes</h1>
-      {/* {/* <NoteForm addNewNote={addNewNote}/> */}
+      <TeamMemberForm addTeamMember={addTeamMember}/>
       <TeamMembers teamMembers={teamMembers} />
     </div>
   );
