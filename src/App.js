@@ -25,13 +25,13 @@ function App() {
       name: "Mark Rogowsky",
       email: "mark-rogowsky@lambdastudents.com",
       role: "Student",
-      body:
+      info:
       "Mark joined the team at the start. He is one of the team."    },
       {
         name: "Chelsea Wetzel",
         email: "chelsea-wetzel@lambdastudents.com",
         role: "Section Lead",
-        body:
+        info:
         "Chelsea is a first time section lead at Lambda. She's a star."    }
   ]);
 
@@ -42,7 +42,7 @@ function App() {
       name: formData.name,
       email: formData.email,
       role: formData.role,
-      body: formData.body
+      info: formData.info
       };
       // now we have to add it
       setTeamMembers([...teamMembers, newTeamMember]);
@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My Notes</h1>
+      <h1>Add a new team member</h1>
       <TeamMemberForm addTeamMember={addTeamMember}/>
       <TeamMembers teamMembers={teamMembers} />
     </div>

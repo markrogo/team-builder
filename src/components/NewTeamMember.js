@@ -37,13 +37,20 @@ const TeamMemberForm = (props) => {
         value={teamMember.name}
         onChange={changeHandler}
       />
-      <label htmlFor="Role">Role</label>
-      <input
-        type="text"
-        name="role"
+      <label htmlFor="role">Role
+        <select
         value={teamMember.role}
-        onChange={changeHandler}
-      />
+        name="role"
+        onChange={changeHandler}>
+       <option value ="">Select from the dropdown</option>
+                <option value="Product Manager">Product Manager</option>
+                <option value="Frontend Engineer">Frontend Engineer</option>
+                <option value="Backend Engineer">Backend Engineer</option>
+                <option value="UX Designer">UX Designer</option>
+                </select>
+                
+
+      </label>
       <label htmlFor="Email">Email</label>
       <input
         type="email"
@@ -52,11 +59,11 @@ const TeamMemberForm = (props) => {
         onChange={changeHandler}
       />
 
-      <label htmlFor="body">Body</label>
+      <label htmlFor="info">Info</label>
       <input
         type="textarea"
-        name="body"
-        value={teamMember.body}
+        name="info"
+        value={teamMember.info}
         onChange={changeHandler}
       />
 
